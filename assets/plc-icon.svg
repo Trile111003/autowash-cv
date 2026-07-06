@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="PLC icon">
+  <rect width="160" height="160" fill="#ffffff"/>
+  <text x="80" y="34" text-anchor="middle" fill="#000000" font-family="Arial, sans-serif" font-size="24" font-weight="500">PLC</text>
+  <g fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="24" y="58" width="49" height="75"/>
+    <rect x="32" y="66" width="33" height="22"/>
+    <path d="M32 101h6"/>
+    <path d="M32 113h6"/>
+    <path d="M32 125h6"/>
+    <circle cx="61" cy="76" r="3" fill="#000000" stroke="none"/>
+    <rect x="78" y="58" width="16" height="53"/>
+    <rect x="100" y="58" width="16" height="53"/>
+    <rect x="122" y="58" width="16" height="53"/>
+    <path d="M78 116h16v17H78z"/>
+    <path d="M100 116h16v17h-16z"/>
+    <path d="M122 116h16v17h-16z"/>
+    <path d="M82 67h8"/>
+    <path d="M104 67h8"/>
+    <path d="M126 67h8"/>
+  </g>
+  <g fill="#000000">
+    <circle cx="86" cy="83" r="3.2"/>
+    <circle cx="86" cy="94" r="3.2"/>
+    <circle cx="86" cy="105" r="3.2"/>
+    <circle cx="108" cy="83" r="3.2"/>
+    <circle cx="108" cy="94" r="3.2"/>
+    <circle cx="108" cy="105" r="3.2"/>
+    <circle cx="130" cy="83" r="3.2"/>
+    <circle cx="130" cy="94" r="3.2"/>
+    <circle cx="130" cy="105" r="3.2"/>
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="AI icon">
+  <rect width="160" height="160" fill="#ffffff"/>
+  <g fill="none" stroke="#141414" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="43" y="43" width="74" height="74" rx="12"/>
+    <path d="M80 43V20"/>
+    <circle cx="80" cy="16" r="8" fill="#ffffff"/>
+    <path d="M61 43V31"/>
+    <circle cx="61" cy="28" r="8" fill="#ffffff"/>
+    <path d="M99 43V31"/>
+    <circle cx="99" cy="28" r="8" fill="#ffffff"/>
+    <path d="M117 64h17"/>
+    <circle cx="142" cy="64" r="8" fill="#ffffff"/>
+    <path d="M117 80h24"/>
+    <circle cx="150" cy="80" r="8" fill="#ffffff"/>
+    <path d="M117 96h17"/>
+    <circle cx="142" cy="96" r="8" fill="#ffffff"/>
+    <path d="M43 64H26"/>
+    <circle cx="18" cy="64" r="8" fill="#ffffff"/>
+    <path d="M43 80H19"/>
+    <circle cx="10" cy="80" r="8" fill="#ffffff"/>
+    <path d="M43 96H26"/>
+    <circle cx="18" cy="96" r="8" fill="#ffffff"/>
+    <path d="M80 117v23"/>
+    <circle cx="80" cy="144" r="8" fill="#ffffff"/>
+    <path d="M61 117v12"/>
+    <circle cx="61" cy="132" r="8" fill="#ffffff"/>
+    <path d="M99 117v12"/>
+    <circle cx="99" cy="132" r="8" fill="#ffffff"/>
+  </g>
+  <text x="80" y="92" text-anchor="middle" fill="#000000" font-family="Arial, sans-serif" font-size="42" font-weight="500">AI</text>
+</svg>

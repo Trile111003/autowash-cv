@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website luận văn tốt nghiệp: Thiết kế và chế tạo mô hình rửa xe tự động ứng dụng xử lý ảnh và PLC.">
+  <title>AutoWash CV | Mô hình rửa xe tự động ứng dụng xử lý ảnh và PLC</title>
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="nav-shell" aria-label="Thanh điều hướng chính">
+      <a class="brand" href="#hero" aria-label="AutoWash CV">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img">
+            <path d="M13 2 4 13h6l-1 9 9-12h-6l1-8Z"></path>
+          </svg>
+        </span>
+        <span>AutoWash<span class="brand-dot">·</span><span class="brand-accent">CV</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Mở menu</span>
+      </button>
+
+      <div class="nav-links" id="site-menu">
+        <a href="#problem">Tổng quan</a>
+        <a href="#workflow">Quy trình làm việc</a>
+        <a href="#ai">Trí tuệ nhân tạo</a>
+        <a href="#plc">PLC</a>
+        <a href="#results">Kết quả</a>
+      </div>
+
+      <a class="nav-cta" href="#demo">Xem bản demo</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Luận văn tốt nghiệp · 2026</p>
+          <h1 id="hero-title" class="hero-title">
+            <span class="hero-title-muted">Thiết kế và chế tạo</span>
+            <span class="hero-title-accent">mô hình rửa xe tự động</span>
+            <span class="hero-title-main">ứng dụng xử lý ảnh và PLC</span>
+          </h1>
+          <p class="hero-description">
+            Hệ thống sử dụng máy ảnh để thu thập hình ảnh xe, mô hình YOLO để nhận dạng loại xe Sedan hoặc SUV, sau đó Python xử lý dữ liệu và truyền đến PLC S7-1200 thông qua Snap7/Ethernet để điều khiển mô hình rửa xe tự động.
+          </p>
+
+          <div class="hero-actions" aria-label="Hành động chính">
+            <a class="button button-primary" href="#workflow">
+              Khám phá hệ thống
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>
+            </a>
+            <a class="button button-secondary" href="#demo">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"></path></svg>
+              Xem bản demo
+            </a>
+          </div>
+
+          <div class="hero-stats" aria-label="Công nghệ chính">
+            <div>
+              <strong>YOLOv8</strong>
+              <span>Mô hình phát hiện</span>
+            </div>
+            <div>
+              <strong>S7-1200</strong>
+              <span>PLC Siemens</span>
+            </div>
+            <div>
+              <strong>Snap7</strong>
+              <span>Giao tiếp</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="scan-card hero-live-card reveal" aria-label="Minh họa live camera nhận diện xe bằng YOLO">
+          <div class="scan-topbar">
+            <span class="live-dot"></span>
+            <span>CAM_01 · TRỰC TIẾP</span>
+            <strong>YOLOv8</strong>
+          </div>
+          <div class="scan-viewport">
+            <img
+              class="hero-car-detection"
+              src="assets/hero-vinfast-detection.jpg"
+              alt="Ảnh xe VinFast trong khung nhận diện YOLO"
+              decoding="async"
+            >
+            <div class="hero-yolo-box" aria-hidden="true">
+              <span>VinFast VF8 95.4%</span>
+            </div>
+            <div class="scan-beam"></div>
+            <div class="scan-line"></div>
+          </div>
+          <div class="scan-footer">
+            <span>KHUNG HÌNH: 0248</span>
+            <span>YOLOv8</span>
+            <i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="container hero-pipeline hero-pipeline-compact reveal" aria-label="Tóm tắt luồng hệ thống">
+        <div class="mini-step">
+          <span class="mini-icon mini-icon-image">
+            <img src="assets/ai-icon.svg" alt="" aria-hidden="true">
+          </span>
+          <strong>AI</strong>
+          <small>Nhận diện xe</small>
+        </div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="mini-step">
+          <span class="mini-icon mini-icon-image">
+            <img src="assets/plc-icon.svg" alt="" aria-hidden="true">
+          </span>
+          <strong>PLC</strong>
+          <small>Điều khiển logic</small>
+        </div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="mini-step">
+          <span class="mini-icon mini-icon-image">
+            <img src="assets/washing-icon.svg" alt="" aria-hidden="true">
+          </span>
+          <strong>Washing</strong>
+          <small>Chu trình rửa</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem-section" id="problem" aria-labelledby="problem-title">
+      <div class="container problem-layout">
+        <div class="problem-copy reveal">
+          <p class="section-kicker">Vấn đề</p>
+          <h2 id="problem-title" class="problem-title">
+            <span class="title-line">Vì sao cần <span class="title-accent">nhận diện loại xe</span></span>
+            <span class="title-line">trong hệ thống rửa xe tự động?</span>
+          </h2>
+          <p>
+            Trong mô hình rửa xe tự động, mỗi loại xe có kích thước và đặc điểm hình dáng khác nhau. Nhận diện Sedan hoặc SUV giúp hệ thống biết được xe đang đi vào vùng xử lý, và điều khiển hệ thống hoạt động theo đúng chu trình.
+          </p>
+          <p>
+            Camera cung cấp hình ảnh đầu vào, kết quả nhận diện được dùng làm dữ liệu tham khảo cho PLC, từ đó hệ thống giảm phụ thuộc vào thao tác thủ công.
+          </p>
+        </div>
+        <div class="problem-card-stack reveal">
+          <article class="problem-card">
+            <span class="problem-icon problem-icon-camera" aria-hidden="true"></span>
+            <div>
+              <h3>Xác định đầu vào</h3>
+              <p>Camera cung cấp dữ liệu hình ảnh để hệ thống biết xe đã xuất hiện trong vùng nhận diện.</p>
+            </div>
+          </article>
+          <article class="problem-card">
+            <span class="problem-icon problem-icon-logic" aria-hidden="true"></span>
+            <div>
+              <h3>Chọn logic phù hợp</h3>
+              <p>Kết quả Sedan hoặc SUV được dùng làm dữ liệu tham khảo cho chu trình điều khiển trên PLC.</p>
+            </div>
+          </article>
+          <article class="problem-card">
+            <span class="problem-icon problem-icon-automation" aria-hidden="true"></span>
+            <div>
+              <h3>Tăng tính tự động</h3>
+              <p>Hệ thống giảm phụ thuộc vào nút nhấn thủ công và tạo nền tảng cho dây chuyền thông minh hơn.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow" aria-labelledby="workflow-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Đường ống hệ thống</p>
+          <h2 id="workflow-title">Quy trình làm việc của hệ thống</h2>
+          <p>Luồng dữ liệu khép kín, từ khâu thu hình bằng camera đến thao tác rửa thực tế, diễn ra qua sáu giai đoạn kết nối.</p>
+        </div>
+
+        <div class="workflow-visual reveal">
+          <div class="workflow-grid" aria-label="Các bước xử lý của hệ thống">
+            <article class="workflow-card" data-step="1" data-step-label="01" data-meta="BƯỚC 01 / 06 · MÁY ẢNH" data-title="Máy ảnh" data-detail="Camera thu nhận hình ảnh xe đầu vào tại vùng nhận diện của mô hình rửa xe." data-icon="camera-icon" tabindex="0">
+              <span class="workflow-icon camera-icon"></span>
+              <h3>Máy ảnh</h3>
+              <p>USB Camera</p>
+            </article>
+            <article class="workflow-card" data-step="2" data-step-label="02" data-meta="BƯỚC 02 / 06 · PHÁT HIỆN YOLO" data-title="Phát hiện YOLO" data-detail="YOLOv8 xử lý từng khung hình và phân loại xe theo hai nhóm Sedan hoặc SUV." data-icon="chip-icon" tabindex="0">
+              <span class="workflow-icon chip-icon"></span>
+              <h3>Phát hiện YOLO</h3>
+              <p>YOLOv8 · Sedan/SUV</p>
+            </article>
+            <article class="workflow-card" data-step="3" data-step-label="03" data-meta="BƯỚC 03 / 06 · XỬ LÝ PYTHON" data-title="Xử lý Python" data-detail="Python kiểm tra độ tin cậy, độ ổn định qua nhiều khung hình và chuẩn bị dữ liệu gửi sang PLC." data-icon="code-icon" tabindex="0">
+              <span class="workflow-icon code-icon"></span>
+              <h3>Xử lý Python</h3>
+              <p>OpenCV + Logic</p>
+            </article>
+            <article class="workflow-card" data-step="4" data-step-label="04" data-meta="BƯỚC 04 / 06 · SNAP7 / ETHERNET" data-title="Snap7 / Ethernet" data-detail="Thư viện Snap7 truyền dữ liệu từ Python qua Ethernet TCP/IP vào vùng nhớ DB1 của PLC." data-icon="network-icon" tabindex="0">
+              <span class="workflow-icon network-icon"></span>
+              <h3>Snap7 / Ethernet</h3>
+              <p>TCP/IP · DB1</p>
+            </article>
+            <article class="workflow-card" data-step="5" data-step-label="05" data-meta="BƯỚC 05 / 06 · PLC S7-1200" data-title="PLC S7-1200" data-detail="PLC đọc dữ liệu, kiểm tra bit data_ready, phản hồi plc_ack và xử lý logic điều khiển." data-icon="plc-icon" tabindex="0">
+              <span class="workflow-icon plc-icon"></span>
+              <h3>PLC S7-1200</h3>
+              <p>CPU Siemens</p>
+            </article>
+            <article class="workflow-card" data-step="6" data-step-label="06" data-meta="BƯỚC 06 / 06 · QUY TRÌNH RỬA" data-title="Quy trình rửa" data-detail="PLC kích hoạt bơm, động cơ, rơle, cảm biến và cơ cấu chấp hành để mô hình hoạt động theo đúng chu trình." data-icon="water-icon" tabindex="0">
+              <span class="workflow-icon water-icon"></span>
+              <h3>Quy trình rửa</h3>
+              <p>Bơm · Chổi · Rơle</p>
+            </article>
+          </div>
+
+          <div class="workflow-timeline" aria-label="Chọn bước trong quy trình làm việc">
+            <button class="workflow-dot" type="button" data-workflow-dot="0" aria-label="Xem bước máy ảnh"></button>
+            <button class="workflow-dot" type="button" data-workflow-dot="1" aria-label="Xem bước phát hiện YOLO"></button>
+            <button class="workflow-dot" type="button" data-workflow-dot="2" aria-label="Xem bước xử lý Python"></button>
+            <button class="workflow-dot" type="button" data-workflow-dot="3" aria-label="Xem bước Snap7 Ethernet"></button>
+            <button class="workflow-dot" type="button" data-workflow-dot="4" aria-label="Xem bước PLC S7-1200"></button>
+            <button class="workflow-dot" type="button" data-workflow-dot="5" aria-label="Xem bước quy trình rửa"></button>
+          </div>
+
+          <article class="workflow-detail-card" data-workflow-detail>
+            <span class="workflow-detail-icon workflow-icon camera-icon" data-workflow-detail-icon></span>
+            <div>
+              <span class="workflow-detail-meta" data-workflow-meta>BƯỚC 01 / 06 · MÁY ẢNH</span>
+              <h3 data-workflow-title>Máy ảnh</h3>
+              <p data-workflow-text>Camera thu nhận hình ảnh xe đầu vào tại vùng nhận diện của mô hình rửa xe.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ai-detection-section" id="ai" aria-labelledby="ai-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Thị giác máy tính</p>
+          <h2 id="ai-title">Phát hiện phương tiện bằng AI</h2>
+          <p>
+            YOLOv8 xử lý từng khung hình camera và phân loại Sedan hoặc SUV theo thời gian thực, sau đó Python chỉ gửi dữ liệu sang PLC khi kết quả đủ tin cậy và ổn định.
+          </p>
+        </div>
+
+        <div class="ai-detection-layout reveal" data-ai-demo>
+          <div class="ai-live-card" aria-label="Live camera mô phỏng quá trình nhận diện xe">
+            <div class="ai-live-topbar">
+              <span class="live-pill"><i></i> CAM_01 · TRỰC TIẾP</span>
+              <strong data-ai-class-badge>Sedan</strong>
+            </div>
+
+            <div class="ai-camera-view">
+              <img class="ai-vehicle-image ai-image-sedan is-active" src="assets/ai-sedan-detection.png" alt="Ảnh nhận diện xe Sedan trong khung YOLO" loading="lazy" decoding="async">
+              <img class="ai-vehicle-image ai-image-suv" src="assets/hero-vinfast-detection.jpg" alt="Ảnh nhận diện SUV trong khung YOLO" loading="lazy" decoding="async">
+              <div class="ai-detection-box" aria-hidden="true"></div>
+              <span class="ai-detection-tag" data-ai-tag>Xe Sedan 94,2%</span>
+              <span class="ai-scan-beam" aria-hidden="true"></span>
+            </div>
+
+            <div class="ai-live-footer">
+              <span>KHUNG: 0248</span>
+              <span>YOLOv8n</span>
+              <span>RTX 3060</span>
+            </div>
+          </div>
+
+          <div class="ai-metrics-stack">
+            <article class="ai-metric-card">
+              <div class="metric-row">
+                <h3>Độ tin cậy phát hiện</h3>
+                <strong data-ai-confidence>94,2%</strong>
+              </div>
+              <div class="metric-track">
+                <span data-confidence-bar></span>
+              </div>
+              <div class="metric-scale">
+                <span>0%</span>
+                <span>100%</span>
+              </div>
+            </article>
+
+            <article class="ai-metric-card">
+              <h3>Xác suất lớp</h3>
+              <div class="class-probability">
+                <div class="probability-row">
+                  <span>Sedan</span>
+                  <strong data-sedan-percent>94,2%</strong>
+                  <div class="metric-track"><span data-sedan-bar></span></div>
+                </div>
+                <div class="probability-row">
+                  <span>SUV</span>
+                  <strong data-suv-percent>5,8%</strong>
+                  <div class="metric-track"><span data-suv-bar></span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="ai-metric-card">
+              <h3>Độ ổn định khung</h3>
+              <div class="stable-frame-grid" data-stability-grid aria-hidden="true"></div>
+              <div class="stable-summary">
+                <span data-stable-count>28/30 khung hình ổn định</span>
+                <strong data-ai-lock>ĐÃ KHÓA: Sedan</strong>
+              </div>
+            </article>
+
+            <pre class="ai-code-card"><code># Kết quả đầu ra của Python
+vehicle_class = "<span data-code-class>Sedan</span>"
+confidence = <span data-code-confidence>94.2</span>
+send_to_plc = <span>True</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="data" aria-labelledby="data-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Data Transfer</p>
+          <h2 id="data-title">Python truyền dữ liệu nhận diện đến PLC DB1</h2>
+          <p>
+            Python đóng gói dữ liệu nhận diện thành bytearray và ghi vào DB1 của PLC. Khi dữ liệu đã sẵn sàng, Python bật bit data_ready. Sau khi PLC đọc dữ liệu, PLC phản hồi bằng bit plc_ack để hoàn tất quá trình truyền.
+          </p>
+        </div>
+
+        <div class="transfer-layout">
+          <div class="endpoint endpoint-python reveal">
+            <span class="endpoint-tag">Python</span>
+            <h3>bytearray packet</h3>
+            <code>client.db_write(1, 0, packet)</code>
+          </div>
+
+          <div class="packet-lane reveal" aria-hidden="true">
+            <span class="packet-dot"></span>
+            <span class="lane-label">Snap7 / Ethernet</span>
+          </div>
+
+          <div class="endpoint endpoint-plc reveal">
+            <span class="endpoint-tag">PLC S7-1200</span>
+            <h3>DB1 memory</h3>
+            <code>data_ready → read → plc_ack</code>
+          </div>
+        </div>
+
+        <div class="data-table-wrap reveal">
+          <table class="data-table">
+            <caption>Bảng dữ liệu minh họa trong DB1</caption>
+            <thead>
+              <tr>
+                <th>Trường dữ liệu</th>
+                <th>Giá trị ví dụ</th>
+                <th>Vai trò</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>length</td>
+                <td>4.50 m</td>
+                <td>Thông tin chiều dài xe</td>
+              </tr>
+              <tr>
+                <td>width</td>
+                <td>1.80 m</td>
+                <td>Thông tin chiều rộng xe</td>
+              </tr>
+              <tr>
+                <td>height</td>
+                <td>1.55 m</td>
+                <td>Thông tin chiều cao xe</td>
+              </tr>
+              <tr>
+                <td>Sedan/SUV</td>
+                <td>SEDAN</td>
+                <td>Nhãn nhận diện từ YOLO</td>
+              </tr>
+              <tr>
+                <td>data_ready</td>
+                <td>TRUE</td>
+                <td>Python báo dữ liệu đã sẵn sàng</td>
+              </tr>
+              <tr>
+                <td>plc_ack</td>
+                <td>TRUE</td>
+                <td>PLC xác nhận đã đọc dữ liệu</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plc" aria-labelledby="plc-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">PLC Control</p>
+          <h2 id="plc-title">PLC S7-1200 xử lý logic và điều khiển cơ cấu rửa</h2>
+          <p>PLC nhận dữ liệu từ Python, kiểm tra trạng thái truyền, xử lý logic điều khiển và kích hoạt chu trình rửa xe theo trình tự đã thiết kế.</p>
+        </div>
+
+        <div class="control-grid reveal">
+          <article class="control-card">
+            <span class="control-icon pump-icon"></span>
+            <h3>Pump</h3>
+            <p>Điều khiển bơm nước trong chu trình rửa.</p>
+          </article>
+          <article class="control-card">
+            <span class="control-icon motor-icon"></span>
+            <h3>Motor</h3>
+            <p>Điều khiển chuyển động cơ cấu mô hình.</p>
+          </article>
+          <article class="control-card">
+            <span class="control-icon relay-icon"></span>
+            <h3>Relay</h3>
+            <p>Đóng cắt tín hiệu cho thiết bị chấp hành.</p>
+          </article>
+          <article class="control-card">
+            <span class="control-icon sensor-icon"></span>
+            <h3>Sensors</h3>
+            <p>Ghi nhận trạng thái vị trí và điều kiện vận hành.</p>
+          </article>
+          <article class="control-card">
+            <span class="control-icon washing-icon"></span>
+            <h3>Washing Mechanism</h3>
+            <p>Kích hoạt cơ cấu rửa theo trình tự tự động.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="prototype" aria-labelledby="prototype-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Prototype</p>
+          <h2 id="prototype-title">Từ thiết kế 3D đến mô hình thực nghiệm</h2>
+          <p>Các phần dưới đây là vị trí đặt ảnh minh họa cho quá trình thiết kế, lắp ráp và kiểm thử mô hình.</p>
+        </div>
+
+        <div class="prototype-grid reveal">
+          <article class="prototype-card prototype-card-link" role="button" tabindex="0" data-open-modal="cad-modal" aria-controls="cad-modal" aria-label="Mở chi tiết bản vẽ thiết kế 2D và 3D">
+            <figure class="prototype-media model-media">
+              <img src="assets/prototype-3d.png" alt="Thiết kế 3D mô hình rửa xe tự động" loading="lazy" decoding="async" onerror="this.remove()">
+              <span class="media-fallback">Thiết kế 3D</span>
+            </figure>
+            <h3>Thiết kế 3D</h3>
+            <p>Mô phỏng kết cấu khung, vùng đặt xe và cơ cấu rửa trước khi chế tạo.</p>
+            <div class="prototype-action">
+              <span>Xem bản vẽ 2D/3D</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>
+            </div>
+          </article>
+          <article class="prototype-card">
+            <figure class="prototype-media real-media">
+              <img src="assets/prototype-real.png" alt="Mô hình rửa xe tự động thực nghiệm" loading="lazy" decoding="async" onerror="this.remove()">
+              <span class="media-fallback">Mô hình thực nghiệm</span>
+            </figure>
+            <h3>Mô hình thực nghiệm</h3>
+            <p>Lắp ráp mô hình rửa xe tự động để kiểm tra luồng xử lý thực tế.</p>
+          </article>
+          <article class="prototype-card prototype-card-link" role="button" tabindex="0" data-open-modal="electrical-modal" aria-controls="electrical-modal" aria-label="Mở chi tiết hồ sơ hệ thống điện">
+            <figure class="prototype-media wiring-media">
+              <img src="assets/prototype-wiring.png" alt="Tủ điện PLC và hệ thống đấu nối" loading="lazy" decoding="async" onerror="this.remove()">
+              <span class="media-fallback">Đấu nối điện</span>
+            </figure>
+            <h3>Đấu nối điện</h3>
+            <p>Kết nối PLC, relay, cảm biến và cơ cấu chấp hành theo sơ đồ thiết kế.</p>
+            <div class="prototype-action">
+              <span>Xem hồ sơ hệ thống điện</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="cad-modal" id="cad-modal" aria-hidden="true">
+      <div class="cad-modal-backdrop" data-close-modal></div>
+      <section class="cad-modal-panel" role="dialog" aria-modal="true" aria-labelledby="cad-modal-title">
+        <button class="cad-modal-close" type="button" data-close-modal aria-label="Đóng chi tiết bản vẽ">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+        </button>
+
+        <div class="cad-modal-grid">
+          <figure class="cad-preview">
+            <img src="assets/prototype-3d.png" alt="Ảnh tổng thể thiết kế 3D của mô hình rửa xe tự động">
+            <figcaption>Hồ sơ thiết kế cơ khí 2D/3D</figcaption>
+          </figure>
+
+          <div class="cad-detail">
+            <p class="section-kicker">Bản vẽ CAD</p>
+            <h3 id="cad-modal-title">File thiết kế mô hình 2D/3D</h3>
+            <p>
+              Thư mục Google Drive lưu các bản vẽ phục vụ thiết kế, gia công và lắp ráp mô hình rửa xe tự động.
+            </p>
+
+            <div class="cad-file-list" aria-label="Nội dung thư mục bản vẽ">
+              <span>Assembly 3D</span>
+              <span>Bản vẽ 2D</span>
+              <span>Khung cơ khí</span>
+              <span>Cụm chổi rửa</span>
+              <span>Gá camera</span>
+              <span>File xuất PDF</span>
+            </div>
+
+            <div class="cad-access">
+              <div class="qr-frame">
+                <img src="assets/cad-drive-qr.png" alt="Mã QR mở thư mục Google Drive chứa bản vẽ 2D và 3D">
+              </div>
+              <div>
+                <strong>Quét QR để mở nhanh trên điện thoại</strong>
+                <span>Hoặc mở trực tiếp thư mục bản vẽ trên Google Drive.</span>
+                <a class="button button-primary cad-drive-button" href="https://drive.google.com/drive/folders/1sS7FDug7lwU1qOn3Pv6w7IVEp-b9Bw56?usp=drive_link" target="_blank" rel="noopener">
+                  Mở Google Drive
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"></path></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="cad-modal" id="electrical-modal" aria-hidden="true">
+      <div class="cad-modal-backdrop" data-close-modal></div>
+      <section class="cad-modal-panel" role="dialog" aria-modal="true" aria-labelledby="electrical-modal-title">
+        <button class="cad-modal-close" type="button" data-close-modal aria-label="Đóng chi tiết hệ thống điện">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+        </button>
+
+        <div class="cad-modal-grid">
+          <figure class="cad-preview">
+            <img src="assets/prototype-wiring.png" alt="Ảnh tủ điện PLC và hệ thống đấu nối của mô hình">
+            <figcaption>Hồ sơ đấu nối điện và tủ điều khiển</figcaption>
+          </figure>
+
+          <div class="cad-detail">
+            <p class="section-kicker">Hệ thống điện</p>
+            <h3 id="electrical-modal-title">File sơ đồ điện và đấu nối PLC</h3>
+            <p>
+              Thư mục Google Drive lưu tài liệu phục vụ kiểm tra phần điện, đấu nối PLC, relay, cảm biến và cơ cấu chấp hành của mô hình.
+            </p>
+
+            <div class="cad-file-list" aria-label="Nội dung thư mục hệ thống điện">
+              <span>Sơ đồ đấu nối PLC</span>
+              <span>Tủ điện điều khiển</span>
+              <span>Nguồn 24VDC / 12VDC</span>
+              <span>Relay trung gian</span>
+              <span>Cảm biến đầu vào</span>
+              <span>Bơm, motor, chổi rửa</span>
+            </div>
+
+            <div class="cad-access">
+              <div class="qr-frame">
+                <img src="assets/electrical-drive-qr.png" alt="Mã QR mở thư mục Google Drive chứa hồ sơ hệ thống điện">
+              </div>
+              <div>
+                <strong>Quét QR để mở hồ sơ hệ thống điện</strong>
+                <span>Hoặc mở trực tiếp thư mục hệ thống điện trên Google Drive.</span>
+                <a class="button button-primary cad-drive-button" href="https://drive.google.com/drive/folders/1sGAxzC-OTwmFJC3965Ud20qbgWM2h0HN?usp=sharing" target="_blank" rel="noopener">
+                  Mở Google Drive
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"></path></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="section" id="demo" aria-labelledby="demo-title">
+      <div class="container demo-layout">
+        <div class="video-placeholder demo-video-frame reveal" aria-label="Video demo vận hành mô hình rửa xe tự động">
+          <video class="demo-video" controls preload="metadata" poster="assets/demo-video-poster.jpg" playsinline>
+            <source src="assets/demo-video.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ phát video trực tiếp.
+          </video>
+          <button class="play-button" type="button" aria-label="Phát video demo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"></path></svg>
+          </button>
+          <div class="video-caption">
+            <strong>Demo Video</strong>
+            <span>AutoWash CV Process</span>
+          </div>
+        </div>
+
+        <div class="section-copy reveal">
+          <p class="section-kicker">Demo</p>
+          <h2 id="demo-title">Trình tự vận hành mô hình</h2>
+          <ol class="demo-steps">
+            <li>Xe đi vào vùng nhận diện</li>
+            <li>Camera thu nhận hình ảnh</li>
+            <li>YOLO nhận diện Sedan/SUV</li>
+            <li>Python gửi dữ liệu sang PLC</li>
+            <li>PLC điều khiển chu trình rửa</li>
+            <li>Kết thúc quy trình</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results" aria-labelledby="results-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Results</p>
+          <h2 id="results-title">Kết quả đạt được</h2>
+          <p>Mô hình kết hợp xử lý ảnh, truyền thông Python và điều khiển PLC trong cùng một hệ thống thực nghiệm.</p>
+        </div>
+
+        <div class="results-grid reveal">
+          <article class="result-card">
+            <strong>01</strong>
+            <p>Nhận diện được 2 loại xe: Sedan và SUV.</p>
+          </article>
+          <article class="result-card">
+            <strong>02</strong>
+            <p>Truyền dữ liệu thành công từ Python sang PLC.</p>
+          </article>
+          <article class="result-card">
+            <strong>03</strong>
+            <p>PLC điều khiển mô hình theo chu trình tự động.</p>
+          </article>
+          <article class="result-card">
+            <strong>04</strong>
+            <p>Mô hình thực nghiệm hoạt động theo logic thiết kế.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section conclusion-section" id="conclusion" aria-labelledby="conclusion-title">
+      <div class="container conclusion-panel reveal">
+        <p class="section-kicker">Conclusion</p>
+        <h2 id="conclusion-title">Kết hợp Computer Vision, Python Communication và PLC Automation</h2>
+        <p>
+          Đề tài cho thấy khả năng tích hợp xử lý ảnh với hệ thống điều khiển công nghiệp. Camera và YOLO giúp nhận diện xe, Python đảm nhiệm xử lý và truyền dữ liệu, còn PLC S7-1200 thực hiện logic điều khiển mô hình rửa xe tự động.
+        </p>
+        <div class="conclusion-actions">
+          <a class="button button-primary" href="https://github.com/your-username/autowash-cv" target="_blank" rel="noreferrer">
+            Xem mã nguồn
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>
+          </a>
+          <button class="button button-secondary" type="button" data-open-modal="contact-modal" aria-controls="contact-modal">
+            Liên hệ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="cad-modal contact-modal" id="contact-modal" aria-hidden="true">
+      <div class="cad-modal-backdrop" data-close-modal></div>
+      <section class="cad-modal-panel contact-modal-panel" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+        <button class="cad-modal-close" type="button" data-close-modal aria-label="Đóng thông tin liên hệ">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+        </button>
+
+        <div class="contact-modal-grid">
+          <div class="contact-profile-card">
+            <figure class="contact-avatar">
+              <img src="assets/profile-le-minh-tri.png" alt="Ảnh chân dung Lê Minh Trí" loading="lazy" decoding="async">
+            </figure>
+            <p class="section-kicker">Thông tin cá nhân</p>
+            <h3 id="contact-modal-title">Lê Minh Trí</h3>
+            <p>
+              Sinh viên thực hiện đề tài mô hình rửa xe tự động ứng dụng xử lý ảnh YOLO, truyền thông Python và PLC S7-1200.
+            </p>
+          </div>
+
+          <div class="contact-detail-card">
+            <div class="contact-row">
+              <span>Vị trí quan tâm</span>
+              <strong>Kỹ sư Cơ Điện Tử / Tự Động Hóa / PLC / Computer Vision</strong>
+            </div>
+            <div class="contact-row">
+              <span>Email</span>
+              <strong>leminhtri111003@gmail.com</strong>
+            </div>
+            <div class="contact-row">
+              <span>Số điện thoại</span>
+              <strong>0388663458</strong>
+            </div>
+            <div class="contact-row contact-row-cv">
+              <span>LinkedIn / CV</span>
+              <div class="contact-cv-link">
+                <a href="https://drive.google.com/file/d/1us8quWuLi7yP3cdJ74bniB1V5Pv6BHwb/view?usp=sharing" target="_blank" rel="noopener">
+                  Mở CV trên Google Drive
+                </a>
+                <img src="assets/cv-drive-qr.png" alt="Mã QR mở CV của Lê Minh Trí">
+              </div>
+            </div>
+            <div class="contact-row">
+              <span>Khu vực</span>
+              <strong>1054, Cách mạng tháng 8, Phường Tân Sơn Nhất, TPHCM</strong>
+            </div>
+            <p class="contact-note">
+              Sẵn sàng trao đổi về các vị trí liên quan đến Cơ điện tử, Tự động hóa, PLC và Computer Vision.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>AutoWash CV - Graduation Thesis Website</p>
+      <a href="#hero">Lên đầu trang</a>
+    </div>
+  </footer>
+</body>
+</html>
