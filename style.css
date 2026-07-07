@@ -119,7 +119,6 @@ svg path {
 }
 
 .js .site-header,
-.js main,
 .js .site-footer {
   opacity: 0;
   transform: translateY(24px);
@@ -129,10 +128,6 @@ svg path {
 .js .site-header {
   transform: translateY(-12px);
   animation-duration: 700ms;
-}
-
-.js main {
-  animation-delay: 120ms;
 }
 
 .js .site-footer {
@@ -2708,7 +2703,7 @@ p {
 .cad-modal {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: 1000;
   display: grid;
   place-items: center;
   padding: 24px;
@@ -2727,13 +2722,14 @@ p {
 .cad-modal-backdrop {
   position: absolute;
   inset: 0;
+  z-index: 0;
   background: rgba(5, 11, 22, 0.54);
   backdrop-filter: blur(10px);
 }
 
 .cad-modal-panel {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: min(1080px, 100%);
   max-height: min(760px, calc(100vh - 48px));
   overflow: auto;
@@ -2744,6 +2740,14 @@ p {
     radial-gradient(circle at 20% 18%, rgba(5, 183, 217, 0.1), transparent 34%),
     linear-gradient(180deg, #ffffff, #f7fbff);
   box-shadow: 0 32px 90px rgba(6, 20, 44, 0.32);
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.cad-modal.is-open .cad-modal-panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .cad-modal-close {
@@ -4062,7 +4066,6 @@ body.modal-open {
   }
 
   .js .site-header,
-  .js main,
   .js .site-footer,
   .js .hero .hero-copy.reveal,
   .js .hero .hero-live-card.reveal,
